@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django_rest_passwordreset',
     'mediaInteractions',
     'userProfile',
-    'wallet',
+    'walletTransactions',
 ]
 
 
