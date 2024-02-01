@@ -51,6 +51,11 @@
         "methods": ["POST"],
         "description": "Register a new user"
       },
+      "custom_signup": {
+        "url": "/api/auth/accounts/register/",
+        "methods": ["POST"],
+        "description": "Custom user registration view with email verification."
+      },
       "user_login": {
         "url": "/api/auth/login/",
         "methods": ["POST"],
@@ -66,6 +71,28 @@
         "methods": ["POST"],
         "description": "Change user's password"
       },
+      "reset_password_email": {
+        "url": "/api/reset-password-email/",
+        "method": "POST",
+        "description": "Initiate a password reset via email",
+        "request_payload": {
+          "email": "string"
+        },
+        "response": {
+          "message": "Password reset email sent.",
+          "error": "string"
+        }
+      },
+        "Password Reset Request":{
+        "url": "/api/userAuth/password-reset-request/",
+        "method": "POST",
+        "description": "Initiate a password reset request."
+      },
+      "Password Reset Confirm":{
+        "url": "/api/userAuth/password-reset/confirm/",
+        "method": "POST",
+        "description": "Confirm a password reset request."
+      },
       "user_profile_create": {
         "url": "/api/profile/create/",
         "methods": ["POST"],
@@ -76,7 +103,7 @@
         "methods": ["GET", "PUT", "PATCH"],
         "description": "Retrieve and update user profile"
       }
-    },
+     },
     "retrieve_update_destroy": {
       "post": {
         "url": "/api/mediaInteractions/posts/<int:pk>/",
